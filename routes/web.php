@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\LivreController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,19 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+Route::get('/livres', [LivreController::class, 'index'])->name('livres.index');
+Route::get('/livres/create', 'LivreController@create')->name('livres.create');
+Route::post('/livres', 'LivreController@store')->name('livres.store');
+Route::get('/livres/{livre}', 'LivreController@show')->name('livres.show');
+Route::get('/livres/{livre}/edit', 'LivreController@edit')->name('livres.edit');
+Route::put('/livres/{livre}', 'LivreController@update')->name('livres.update');
+Route::delete('/livres/{livre}', 'LivreController@destroy')->name('livres.destroy');
+
+
+Route::resource('livres', 'LivreController');
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -28,6 +43,10 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
