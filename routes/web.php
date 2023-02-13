@@ -19,17 +19,18 @@ use App\Http\Controllers\LivreController;
 */
 
 
+Route::resource('livres', 'LivreController');
 
 Route::get('/livres', [LivreController::class, 'index'])->name('livres.index');
-Route::get('/livres/create', 'LivreController@create')->name('livres.create');
-Route::post('/livres', 'LivreController@store')->name('livres.store');
-Route::get('/livres/{livre}', 'LivreController@show')->name('livres.show');
-Route::get('/livres/{livre}/edit', 'LivreController@edit')->name('livres.edit');
-Route::put('/livres/{livre}', 'LivreController@update')->name('livres.update');
-Route::delete('/livres/{livre}', 'LivreController@destroy')->name('livres.destroy');
+Route::get('/livres/create', [LivreController::class, 'create'])->name('livres.create');
+Route::post('/livres', [LivreController::class, 'store'])->name('livres.store');
+// Route::get('/livres/{livre}', [LivreController::class, 'show'])->name('livres.show');
+Route::get('/livres/{livre}/edit', [LivreController::class, 'edit'])->name('livres.edit');
+Route::put('/livres/{livre}', [LivreController::class, 'update'])->name('livres.update');
+Route::delete('/livres/{livre}', [LivreController::class, 'destroy'])->name('livres.destroy');
 
 
-Route::resource('livres', 'LivreController');
+
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

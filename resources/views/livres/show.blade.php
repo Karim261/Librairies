@@ -1,5 +1,5 @@
-<h1>{{ $livre->titre }}</h1>
-<p>ISBN: {{ $livre->isbn }}</p>
+<h1>{{ $livre->nom }}</h1>
+<p>ISBN: {{ $livre->id }}</p>
 <p>Auteur: {{ $livre->auteur }}</p>
-<p>Editeur: {{ $livre->editeur }}</p>
+<p>Stock: {{ $livre->stock }}</p>
 <a href="{{ route('livres.index') }}">Retour à la liste</a>

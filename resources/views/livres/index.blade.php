@@ -4,7 +4,7 @@
             <th>Titre</th>
             <th>ISBN</th>
             <th>Auteur</th>
-            <th>Editeur</th>
+            <th>Stock</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -14,7 +14,7 @@
             <td>{{ $livre->titre }}</td>
             <td>{{ $livre->isbn }}</td>
             <td>{{ $livre->auteur }}</td>
-            <td>{{ $livre->editeur }}</td>
+            <td>{{ $livre->stock }}</td>
             <td>
                 <a href="{{ route('livres.show', $livre->id) }}">Afficher</a>
                 <a href="{{ route('livres.edit', $livre->id) }}">Modifier</a>
