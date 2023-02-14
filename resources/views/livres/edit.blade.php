@@ -1,4 +1,4 @@
-<form action="{{ route('livres.update', $livre->id) }}" method="post">
+<!-- <form action="{{ route('livres.update', $livre->id) }}" method="post">
     @csrf
     @method('PUT')
     <label for="titre">Titre</label>
@@ -10,4 +10,4 @@
     <label for="stock">Stock</label>
     <input type="text" name="stock" id="stock" value="{{ $livre->stock }}">
     <button type="submit">Enregistrer</button>
-</form>
+</form> -->

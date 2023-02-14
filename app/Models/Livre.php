@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Livre extends Model
 {
+    public $timestamps = false;
     // use HasFactory;
     protected $table = 'livres';
     protected $fillable = ['id', 'nom', 'auteur', 'date_publication', 'stock'];
