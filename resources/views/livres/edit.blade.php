@@ -19,12 +19,12 @@
             <input type="text" class="form-control" id="auteur" name="auteur" value="{{ $livre->auteur }}">
         </div>
         <div class="form-group">
-            <label for="stock">Stock</label>
-            <input type="number" class="form-control" id="stock" name="stock" value="{{ $livre->stock }}">
-        </div>
-        <div class="form-group">
             <label for="date_publication">Année de publication</label>
             <input type="date" class="form-control" id="date_publication" name="date_publication" value="{{ $livre->date_publication }}">
+        </div>
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="number" class="form-control" id="stock" name="stock" value="{{ $livre->stock }}">
         </div>
 
         <button type="submit" class="btn btn-primary">Modifier</button>
