@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\LivreController;
+use App\Http\Controllers\EntreeStockController;
 
 
 /*
@@ -28,6 +29,18 @@ Route::post('/livres', [LivreController::class, 'store'])->name('livres.store');
 Route::get('/livres/{livre}/edit', [LivreController::class, 'edit'])->name('livres.edit');
 Route::put('/livres/{livre}', [LivreController::class, 'update'])->name('livres.update');
 Route::delete('/livres/{livre}', [LivreController::class, 'destroy'])->name('livres.destroy');
+
+
+
+Route::resource('entree_stocks', 'EntreeStockController');
+
+Route::get('/entree_stocks', [EntreeStockController::class, 'index'])->name('entree_stocks.index');
+Route::get('/entree_stocks/create', [EntreeStockController::class, 'create'])->name('entree_stocks.create');
+Route::post('/entree_stocks', [EntreeStockController::class, 'store'])->name('entree_stocks.store');
+// Route::get('/livres/{livre}', [LivreController::class, 'show'])->name('livres.show');
+Route::get('/entree_stocks/{entree_stock}/edit', [EntreeStockController::class, 'edit'])->name('entree_stocks.edit');
+Route::put('/entree_stocks/{entree_stock}', [EntreeStockController::class, 'update'])->name('entree_stocks.update');
+Route::delete('/entree_stocks/{entree_stock}', [EntreeStockController::class, 'destroy'])->name('entree_stocks.destroy');
 
 
 
