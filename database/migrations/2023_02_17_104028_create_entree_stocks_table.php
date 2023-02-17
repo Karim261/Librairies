@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('entree_stocks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('livre_id')->nullable()->constrained('livres')->cascadeOnDelete();
             $table->date('date_entree');
             $table->integer('quantite');
 

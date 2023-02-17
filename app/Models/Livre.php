@@ -10,5 +10,13 @@ class Livre extends Model
     public $timestamps = false;
     // use HasFactory;
     protected $table = 'livres';
-    protected $fillable = ['id', 'nom', 'auteur', 'date_publication', 'stock'];
+    protected $fillable = [
+        'nom', 
+        'auteur', 
+        'date_publication', 
+        'stock'];
+
+    public function entree_stocks(){
+        return $this->hasMany(EntreeStock::class);
+    }
 }

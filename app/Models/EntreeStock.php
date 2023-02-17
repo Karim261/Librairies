@@ -11,6 +11,13 @@ class EntreeStock extends Model
     public $timestamps = false;
     // use HasFactory;
     protected $table = 'entree_stocks';
-    protected $fillable = ['id', 'date_entree', 'quantite'];
+    protected $fillable = [ 
+        'livre_id', 
+        'date_entree', 
+        'quantite'
+    ];
     
+    public function livre(){
+        return $this->belongTo(Livre::class);
+    }
 }
